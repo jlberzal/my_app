@@ -24,6 +24,9 @@ def create_app(extra_config_settings={}):
 
     # ***** Initialize app config settings *****
     # Read common settings from 'app/startup/common_settings.py' file
+    
+    print "hello"
+    
     app.config.from_object('app.startup.common_settings')
     # Read environment-specific settings from file defined by OS environment variable 'ENV_SETTINGS_FILE'
     env_settings_file = os.environ.get('ENV_SETTINGS_FILE', 'env_settings_example.py')
@@ -76,7 +79,7 @@ def init_email_error_handler(app):
     Initialize a logger to send emails on error-level messages.
     Unhandled exceptions will now send an email message to app.config.ADMINS.
     """
-    if app.debug: return  # Do not send error emails while developing
+    #if app.debug: return  # Do not send error emails while developing
 
     # Retrieve email settings from app.config
     host = app.config['MAIL_SERVER']

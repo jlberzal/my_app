@@ -4,6 +4,8 @@
 
 from app import create_app
 
+print "Running manage"
+
 app = create_app()
 
 
