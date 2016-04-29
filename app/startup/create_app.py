@@ -42,7 +42,7 @@ def create_app(extra_config_settings={}):
     manager.add_command('db', MigrateCommand)
 
     # Setup Flask-Mail
-    mail = Mail(app)
+    #mail = Mail(app)
 
     # Setup WTForms CsrfProtect
     CsrfProtect(app)
@@ -56,7 +56,7 @@ def create_app(extra_config_settings={}):
     app.jinja_env.globals['bootstrap_is_hidden_field'] = is_hidden_field_filter
 
     # Setup an error-logger to send emails to app.config.ADMINS
-    init_email_error_handler(app)
+    #init_email_error_handler(app)
 
     # Setup Flask-User to handle user account related forms
     from app.core.models import User, MyRegisterForm
